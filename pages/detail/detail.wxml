@@ -1,0 +1,32 @@
+<view class="item-header">
+  <!-- 标题 -->
+  <view class='item-title'>阿丽塔：战斗天使 Alita: Battle Angel</view>
+  <view class='item-detail'>
+    <view class='left-detail'>
+      <view class='item-rate'>
+        <!-- 星级与评价 -->
+        <stars rate="7.0" starsize="30" fontsize="30"></stars>
+        <text class='comment-persons'>23678人评价</text>
+      </view>
+      <view class='item-sub-detail'>
+        <!-- 时长 类型 -->
+        <view class='item-type'>
+        122分钟 动作 / 科幻 / 冒险
+        </view>
+        <!-- 上映日期 -->
+        <view class='item-show'>
+        上映日期: 2019-02-22(中国大陆) / 2019-02-05(台湾) / 2019-02-14(美国)
+        </view>
+        <!-- 导演 、 演员 -->
+        <view class='item-actors'>
+        导演: 罗伯特·罗德里格兹
+        主演: 罗莎·萨拉查 / 克里斯托弗·沃尔兹 / 基恩·约翰逊 / 艾德·斯克林 / 马赫沙拉·阿里
+        </view>
+      </view>
+    </view>
+    <!-- 右侧图 -->
+    <view class='right-detail'>
+      <image src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2544987866.webp'></image>
+    </view>
+  </view>
+</view>

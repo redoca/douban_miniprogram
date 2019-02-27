@@ -1,0 +1,25 @@
+.module-group {
+  padding: 40rpx;
+  padding-bottom: 0rpx;
+  background-color: white;
+}
+/* 标题 电影 更多 */
+.module-group .module-top {
+  font-size: 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+/* 标题 电影 更多 字色 */
+.module-top .module-title {
+  color: #494949;
+}
+.module-top .module-more {
+  color: #41be57;
+}
+/* 电影横向滚动视图 */
+.module-scroll-view {
+  margin-top: 30rpx;
+  width: 100%;
+  height: 400rpx;
+  white-space: nowrap; /* 不换行,这样可以横排显示 */
+}
