@@ -15,8 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var type = options.type // 数据类别
     var that = this 
+    var type = options.type // 数据类别
+    that.setData({
+      type: type
+    })
     let title = ""  // 标题
     wx.showLoading({  // 加载菊花
       title: '',

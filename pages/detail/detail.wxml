@@ -1,33 +1,32 @@
 <!-- 详情头 -->
 <view class="item-header">
   <!-- 标题 -->
-  <view class='item-title'>阿丽塔：战斗天使 Alita: Battle Angel</view>
+  <view class='item-title'>{{item.title}}{{item.original_title}}{{item.year}}</view>
   <view class='item-detail'>
     <view class='left-detail'>
       <view class='item-rate'>
         <!-- 星级与评价 -->
-        <stars rate="7.0" starsize="30" fontsize="30"></stars>
-        <text class='comment-persons'>23678人评价</text>
+        <stars rate="{{item.rating.value}}" starsize="28" fontsize="28"></stars>
+        <text class='comment-persons'>{{item.rating.count}}人评价</text>
       </view>
       <view class='item-sub-detail'>
         <!-- 时长 类型 -->
         <view class='item-type'>
-        122分钟 动作 / 科幻 / 冒险
+        {{item.durations[0]}} {{item.genres}}
         </view>
         <!-- 上映日期 -->
         <view class='item-show'>
-        上映日期: 2019-02-22(中国大陆) / 2019-02-05(台湾) / 2019-02-14(美国)
+        上映日期: {{item.pubdate}}
         </view>
         <!-- 导演 、 演员 -->
         <view class='item-actors'>
-        导演: 罗伯特·罗德里格兹
-        主演: 罗莎·萨拉查 / 克里斯托弗·沃尔兹 / 基恩·约翰逊 / 艾德·斯克林 / 马赫沙拉·阿里
+        {{item.authors}}
         </view>
       </view>
     </view>
     <!-- 右侧图 -->
     <view class='right-detail'>
-      <image src='https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2544987866.webp'></image>
+      <image src='{{item.cover.image.small.url}}'></image>
     </view>
   </view>
 </view>
@@ -36,44 +35,24 @@
 <view class='item-tags'>
   <view class='item-tags-title'>豆瓣成员常用标签</view>
   <view class='item-tags-list'>
-    <text>黑色幽默</text>
-    <text>科幻</text>
-    <text>动画</text>
-    <text>剧情</text>
-    <text>外语</text>
-    <text>英语</text>
-    <text>动作</text>
+    <text wx:for="{{tags}}" wx:key="*this">{{item}}</text>
   </view>
 </view>
 
 <!-- 评论列表 -->
 <view class='comment-list-group'>
-  <view class='comment-title'>短评(2903984)</view>
-  <view class='comment-group'>
+  <view class='comment-title'>短评({{commentstotal}})</view>
+  <view wx:for="{{comments}}" wx:key="{{item.id}}" class='comment-group'>
     <view class='left-comment'>
-      <image class='avatar' src='https://img3.doubanio.com/icon/u154365551-5.jpg'></image>
+      <image class='avatar' src='{{item.user.avatar}}'></image>
     </view>
     <view class='right-comment'>
       <view class='username-rate'>
-        <view class='username'>谢艾米</view>
-        <stars rate="9" starsize="28" fontsize="28" istext="{{false}}"></stars>
+        <view class='username'>{{item.user.name}}</view>
+        <stars rate="{{item.rating.value * 2}}" starsize="28" fontsize="28" istext="{{false}}"></stars>
       </view>
-      <view class='release-time'>2019-02-28 12:12:12</view>
-      <view class='content'>一部很有教育意义的电影，它告诉我们：我们的确是父母从垃圾桶捡来的，不是充话费送的。 继约翰·威克后又一个“地表最强爱狗人士”，你敢杀她的狗，她就敢一刀把你劈成两半。太能打了，让你两条腿都能戳爆你的眼睛。 叶问可以打十个鬼子，阿丽塔可以打十个叶问。 “26世纪福斯”的片头很有趣，不知道福斯能不能活到26世纪。 电影探讨的主题仍然是人工智能自我意识觉醒，从开始不知道自己是谁，到拥有七情六欲，能睡觉、能流泪，再到发现自己并不低人一等，反而比人更好。不以物喜，不以己悲，勇敢接受自己，坦然面对生活。 同时也是一个破茧成蝶、凤凰涅槃的故事，历经千锤百炼，遭受切肤之痛，苦其心志，劳其筋骨，方能百炼成钢、浴火重生。 承受他人不能承受之痛苦，才能成为强者。 最后想问一下阿丽塔：2563年的时候《阿凡达2》上映了吗</view>
-    </view>
-  </view>
-
-  <view class='comment-group'>
-    <view class='left-comment'>
-      <image class='avatar' src='https://img3.doubanio.com/icon/u154365551-5.jpg'></image>
-    </view>
-    <view class='right-comment'>
-      <view class='username-rate'>
-        <view class='username'>谢艾米</view>
-        <stars rate="9" starsize="28" fontsize="28" istext="{{false}}"></stars>
-      </view>
-      <view class='release-time'>2019-02-28 12:12:12</view>
-      <view class='content'>一部很有教育意义的电影，它告诉我们：我们的确是父母从垃圾桶捡来的，不是充话费送的。 继约翰·威克后又一个“地表最强爱狗人士”，你敢杀她的狗，她就敢一刀把你劈成两半。太能打了，让你两条腿都能戳爆你的眼睛。 叶问可以打十个鬼子，阿丽塔可以打十个叶问。 “26世纪福斯”的片头很有趣，不知道福斯能不能活到26世纪。 电影探讨的主题仍然是人工智能自我意识觉醒，从开始不知道自己是谁，到拥有七情六欲，能睡觉、能流泪，再到发现自己并不低人一等，反而比人更好。不以物喜，不以己悲，勇敢接受自己，坦然面对生活。 同时也是一个破茧成蝶、凤凰涅槃的故事，历经千锤百炼，遭受切肤之痛，苦其心志，劳其筋骨，方能百炼成钢、浴火重生。 承受他人不能承受之痛苦，才能成为强者。 最后想问一下阿丽塔：2563年的时候《阿凡达2》上映了吗</view>
+      <view class='release-time'>{{item.create_time}}</view>
+      <view class='content'>{{item.comment}}</view>
     </view>
   </view>
 </view>

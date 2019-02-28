@@ -7,7 +7,7 @@
   </view>
   <!-- 横向滚动 -->
   <scroll-view class='module-scroll-view' scroll-x="{{true}}">
-    <itemview wx:for="{{items}}" wx:key="{{item.title}}" item="{{item}}">
+    <itemview wx:for="{{items}}" wx:key="{{item.title}}" item="{{item}}" itemurl="/pages/detail/detail?type={{type}}&id={{item.id}}">
     </itemview>
   </scroll-view>
 </view>

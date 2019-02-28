@@ -15,6 +15,10 @@ Component({
     items: {  // 数据
       type: Array,
       value: []
+    },
+    type: {  // 类型
+      type: String,
+      value: ""
     }
   },
 

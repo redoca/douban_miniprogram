@@ -1,24 +1,22 @@
 import {globalURLs} from "urls.js"
 
 const network = {
+  // 电影列表
   getMovieList: function(params) {
-    // 电影
     params.type = "movie"
     this.getItemList(params)
   },
+  // 电视剧列表
   getTvList: function(params) {
-    // 电视
     params.type = "tv"
     this.getItemList(params)
   },
+  // 综艺列表
   getShowList: function(params) {
-    // 综艺
     params.type = "show"
     this.getItemList(params)
   },
-
   getItemList: function (params) {
-    // 综艺
     const count = params.count ? params.count : 7
     // 判断获取网络请求地址
     let url = ''
@@ -39,6 +37,77 @@ const network = {
         }
         if (params && params.success) {
           params.success(items)
+        }
+      }
+    })
+  },
+
+  // 详情页信息
+  getItemDetail: function (params) {
+    const type = params.type
+    const id = params.id
+    // 判断获取网络请求地址
+    let url = ''
+    if (params.type === 'movie') {
+      url = globalURLs.movieDetail + id
+    } else if (params.type === 'tv') {
+      url = globalURLs.tvDetail + id
+    } else {
+      url = globalURLs.showDetail + id
+    }
+    wx.request({
+      url: url,
+      success: function (res) {
+        const item = res.data
+        if (params && params.success) {
+          params.success(item)
+        }
+      }
+    })
+  },
+  // 详情页标签
+  getItemTags: function (params) {
+    const type = params.type
+    const id = params.id
+    // 判断获取网络请求地址
+    let url = ''
+    if (params.type === 'movie') {
+      url = globalURLs.movieTags(id)
+    } else if (params.type === 'tv') {
+      url = globalURLs.tvTags(id)
+    } else {
+      url = globalURLs.showTags(id)
+    }
+    wx.request({
+      url: url,
+      success: function (res) {
+        const item = res.data.tags
+        if (params && params.success) {
+          params.success(item)
+        }
+      }
+    })
+  },
+  // 详情页短评
+  getItemComments: function(params) {
+    const type = params.type
+    const id = params.id
+    const start = params.start ? params.start : 0
+    const count = params.count ? params.count : 3
+    let url = ''
+    if (params.type === 'movie') {
+      url = globalURLs.movieComments(id, start, count)
+    } else if (params.type === 'tv') {
+      url = globalURLs.tvComments(id, start, count)
+    } else {
+      url = globalURLs.showComments(id, start, count)
+    }
+    wx.request({
+      url: url,
+      success: function (res) {
+        const data = res.data
+        if (params && params.success) {
+          params.success(data)
         }
       }
     })

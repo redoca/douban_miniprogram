@@ -6,7 +6,10 @@ Component({
   properties: {
     rate: {
       type: Number,
-      value: 0
+      value: 0,
+      observer(newVal, oldVal, changedPath) {
+        this.updateRate()
+      }
     },
     starsize: {
       type: Number,
@@ -37,22 +40,17 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  },
-
-  // 组件生命周期
-  lifetimes: {
-    attached: function() {
+    updateRate: function() {
       const rate = this.properties.rate
       const intRate = parseInt(rate)
       // 高亮星
-      const light = parseInt(intRate/2)  
+      const light = parseInt(intRate / 2)
       const lights = []
       for (let index = 0; index < light; index++) {
         lights.push(index)
       }
       // 半星
-      const half = intRate%2
+      const half = intRate % 2
       const halfs = []
       for (let index = 0; index < half; index++) {
         halfs.push(index)
@@ -70,6 +68,13 @@ Component({
         grays: grays,
         ratetext: ratetext
       })
+    }
+  },
+
+  // 组件生命周期
+  lifetimes: {
+    attached: function() {
+      this.updateRate()
     }
   }
 })

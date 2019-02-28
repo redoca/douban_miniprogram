@@ -22,6 +22,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 28rpx;
 }
 
 .item-rate .comment-persons {
@@ -41,7 +42,7 @@
 
 .item-sub-detail {
   margin-top: 20rpx;
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 .item-sub-detail view{
   margin-bottom: 10rpx;
@@ -82,7 +83,7 @@
 .comment-list-group .comment-group {
   display: flex;
   justify-content: flex-start;
-  padding-top: 30rpx;
+  padding-top: 40rpx;
 }
 /* 评论人头像 */
 .comment-group .left-comment {
