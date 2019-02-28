@@ -19,6 +19,10 @@ Component({
     fontcolor: {
       type: String,
       value: '#ccc'
+    },
+    istext: {
+      type: Boolean,
+      value: true
     }
   },
 
