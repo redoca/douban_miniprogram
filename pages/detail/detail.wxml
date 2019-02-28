@@ -42,20 +42,8 @@
 <!-- 评论列表 -->
 <view class='comment-list-group'>
   <view class='comment-title'>短评({{commentstotal}})</view>
-  <view wx:for="{{comments}}" wx:key="{{item.id}}" class='comment-group'>
-    <view class='left-comment'>
-      <image class='avatar' src='{{item.user.avatar}}'></image>
-    </view>
-    <view class='right-comment'>
-      <view class='username-rate'>
-        <view class='username'>{{item.user.name}}</view>
-        <stars rate="{{item.rating.value * 2}}" starsize="28" fontsize="28" istext="{{false}}"></stars>
-      </view>
-      <view class='release-time'>{{item.create_time}}</view>
-      <view class='content'>{{item.comment}}</view>
-    </view>
-  </view>
+  <onecomment wx:for="{{comments}}" wx:key="{{item.id}}" item="{{item}}"></onecomment>
 </view>
 
 <!-- 更多短评 -->
-<navigator class='more-comment'>查看更多短评</navigator>
+<navigator class='more-comment' url='/pages/comment/comment?id={{id}}&type={{type}}&thumbnail={{item.cover.image.small.url}}&title={{item.title}}&rate={{item.rating.value}}'>查看更多短评</navigator>

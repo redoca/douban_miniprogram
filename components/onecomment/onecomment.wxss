@@ -1,0 +1,43 @@
+.comment-group {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 40rpx;
+}
+/* 评论人头像 */
+.comment-group .left-comment {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 20rpx;
+}
+.left-comment .avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+/* 右块 */
+.comment-group .right-comment {
+  flex: 1;
+}
+/* 用户评分 */
+.right-comment .username-rate {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+/* 用户名 */
+.username-rate .username {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+/* 评论时间 */
+.right-comment .release-time {
+  color: #b3b3b3;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+/* 评论内容 */
+.right-comment .content {
+  font-size: 30rpx;
+  color: #353535;
+  margin-top: 10rpx;
+}

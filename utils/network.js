@@ -102,6 +102,8 @@ const network = {
     } else {
       url = globalURLs.showComments(id, start, count)
     }
+    console.log(url)
+
     wx.request({
       url: url,
       success: function (res) {

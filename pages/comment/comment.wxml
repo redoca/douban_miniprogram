@@ -1,0 +1,19 @@
+<view class="container">
+
+  <!-- 电影头 -->
+  <view class='item-group' bindtap='onItemTapEvent'>
+    <image class='thumbnail' src='{{thumbnail}}'></image>
+    <text class='.item-title'>{{title}}</text>
+    <text class='.item-rate'>{{rate}}</text>
+  </view>
+
+  <!-- 影评 -->
+  <view class='comment-total'>全部影评({{commentstotal}})</view>
+  <onecomment wx:for="{{comments}}" wx:key="{{item.id}}" item="{{item}}"></onecomment>
+
+  <!-- 上一页下一页 -->
+  <view class='page-btn-group'>
+    <button bindtap='onPrePageTap' loading='{{preLoading}}' disabled='{{start <= 1}}' class='page-btn'>上一页</button>
+    <button bindtap='onNextPageTap' loading='{{nextLoading}}' class='page-btn'>下一页</button>
+  </view>
+</view>
