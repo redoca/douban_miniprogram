@@ -1,1 +1,52 @@
-/* pages/search/search.wxss */
+
+/* 搜索结果列表 */
+.item-list-group {
+  padding: 10rpx 20rpx;
+}
+/* 搜索结果 cell */
+.item-list-group .item-group {
+  display: flex;
+  padding: 10rpx 0rpx;
+  border-bottom: 1px solid #e4e4e4;
+}
+/* 电影图 */
+.item-group .thumbnail {
+  width: 80rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+/* 电影信息 group */
+.item-group .info-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* 电影标题 */
+.info-group .title {
+  font-size: 32rpx;
+}
+/* 评分 */
+.info-group .rate-year {
+  font-size: 28rpx;
+  color: #7b7b7b;
+}
+
+/* 历史记录列表 */
+.history-list-group {
+  padding: 10rpx 20rpx;
+}
+
+.history-list-group .history-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx;
+  font-size: 28rpx;
+  background-color: #f9f9f9;
+  color: #9e9e9e;
+}
+
+.history-list-group .history-group {
+  font-size: 30rpx;
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #e4e4e4;
+}

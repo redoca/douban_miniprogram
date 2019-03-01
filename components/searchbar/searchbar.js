@@ -21,6 +21,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onInputEvent: function(event) {
+      // 组件绑定事件
+      this.triggerEvent("searchinput", { "value": event.detail.value }, {})
+    }
   }
 })

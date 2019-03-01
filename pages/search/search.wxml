@@ -1,2 +1,23 @@
 <!--pages/search/search.wxml-->
-<searchbar></searchbar>
+<searchbar bindsearchinput="onSearchInputEvent"></searchbar>  
+<!-- 组件绑定事件  bindsearchinput -> this.triggerEvent("searchinput"... -->
+
+<!-- 历史搜索 -->
+<view wx:if="{{histories.length && !subjects.length}}" class='history-list-group'>
+  <view class='history-title'>
+    <view class='title'>历史记录</view>
+    <view class='clear' bindtap='onClearEvent'>清除</view>
+  </view>
+  <navigator wx:for="{{histories}}" wx:key="{{item.id}}" class='history-group' url='/pages/detail/detail?type={{item.type}}&id={{item.id}}'>{{item.title}}</navigator>
+</view>
+
+<!-- 搜索结果列表 -->
+<view class='item-list-group'>
+  <view wx:for="{{subjects}}" class='item-group' wx:key="{{item.id}}" bindtap='onItemTapEvent' data-id="{{item.id}}" data-type="{{item.type}}" data-title="{{item.title}}">
+    <image src='{{item.pic.normal}}' class='thumbnail'></image>
+    <view class='info-group'>
+      <view class='title'>{{item.title}}</view>
+      <view class='rate-year'>{{item.rating.value}}/{{item.year}}</view>
+    </view>
+  </view>
+</view>

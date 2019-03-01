@@ -113,6 +113,21 @@ const network = {
         }
       }
     })
+  },
+  // 搜索
+  getSearch: function (params) {
+    const q = params.q
+    let url = globalURLs.searchUrl(q)
+    console.log(url)
+    wx.request({
+      url: url,
+      success: function (res) {
+        const data = res.data
+        if (params && params.success) {
+          params.success(data.subjects)
+        }
+      }
+    })
   }
 }
 

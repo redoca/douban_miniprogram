@@ -1,7 +1,7 @@
 <!-- 详情头 -->
 <view class="item-header">
   <!-- 标题 -->
-  <view class='item-title'>{{item.title}}{{item.original_title}}{{item.year}}</view>
+  <view class='item-title'>{{item.title}}{{item.original_title}}  {{item.year}}</view>
   <view class='item-detail'>
     <view class='left-detail'>
       <view class='item-rate'>

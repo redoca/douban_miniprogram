@@ -17,6 +17,9 @@ Page({
     const that = this
     const type = options.type
     const id = options.id
+    wx.showLoading({
+      title: '',
+    })
     network.getItemDetail({
       type: type,
       id: id,
@@ -45,6 +48,7 @@ Page({
           type: type,
           id: id
         })
+        wx.hideLoading()
       }
     })
     // 标签网络请求

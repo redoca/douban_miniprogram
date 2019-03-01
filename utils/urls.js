@@ -36,6 +36,10 @@ const globalURLs = {
   // 综艺短评列表
   showComments: function (id, start = 0, count = 3) {
     return this.tvComments(id, start, count)
+  },
+  // 搜索
+  searchUrl: function (q) {
+    return "https://m.douban.com/rexxar/api/v2/search?type=movie&q=" + q
   }
 }
 

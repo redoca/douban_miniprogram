@@ -86,5 +86,5 @@
   text-align: center;
   font-size: 36rpx;
   color: #41b357;
-  padding-bottom: 40rpx;
+  margin-bottom: 40rpx;
 }
