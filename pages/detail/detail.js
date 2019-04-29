@@ -15,8 +15,7 @@ Page({
    */
   onLoad: function (options) {
     const that = this
-    const type = options.type
-    const id = options.id
+    const {type , id} = options
     wx.showLoading({
       title: '',
     })
